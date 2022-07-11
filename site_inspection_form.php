@@ -77,8 +77,7 @@
                 $output .= "Failed to Save Form Data";
             }
         }
-    }else{
-        
+    } else {
     }
 
 
@@ -92,280 +91,134 @@
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
 
-  <!-- Content Row -->
-  <div class="row">
+        <!-- Content Row -->
+        <div class="row">
 
 
-<!-- Content Row -->
-<?php include("include/head.php"); ?>
-<div class="container">
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-md-8">
-            <div class="text-center"><?php echo $output; ?></div>
-            <form action="" method="post" enctype="">
-                <table style="width: 100%;">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <h5>Date of Inspection: </h5>
-                            </td>
-                            <td><input type="date" class="form-control" name="date" /></td>
+            <!-- Content Row -->
+            <?php include("include/head.php"); ?>
+            <div class="container">
+                <div>
+                    <div class="col"></div>
+                    <div >
+                        <div class="text-center"><?php echo $output; ?></div>
+                        <form action="" method="post" enctype="">
+                        <div style="display: flex;">
+                            <table style="width: 550px; column-gap:14px">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 21%;">
+                                            <h5>Date: </h5>
+                                        </td>
+                                        <td style="width: 26%;"><input type="date" class="form-control" name="date" /></td>
 
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Site: </h5>
-                            </td>
-                            <td> <input type="text" class="form-control" name="site"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Completed by: </h5>
-                            </td>
-                            <td> <input type="text" class="form-control" name="completion"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Work Area: </h5>
-                            </td>
-                            <td><input type="text" class="form-control" name="workarea"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Job description: </h5>
-                            </td>
-                            <td><input type="text" class="form-control" name="description"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Supervisor: </h5>
-                            </td>
-                            <td><input type="text" class="form-control" name="supervisor"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Inspector: </h5>
-                            </td>
-                            <td><input type="text" class="form-control" name="inspector"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Inspection Type: </h5>
-                            </td>
-                            <td><input type="text" class="form-control" name="inspectiontype">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                        <td style="width: 3%;"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <h5>Inspector Name:</h5>
+                                        </td>
+                                        <td> <input type="text" class="form-control" name="inspector"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h5>Site Name: </h5>
+                                        </td>
+                                        <td> <input type="text" class="form-control" name="site"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h5>Inspection Type: </h5>
+                                        </td>
+                                        <td><input type="text" class="form-control" name="inspectiontype"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h5>Title: </h5>
+                                        </td>
+                                        <td><input type="text" class="form-control" name="title"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: top;">
+                                            <h5>Description: </h5>
+                                        </td>
+                                        <td>
+                                            <textarea class="form-control" name="description" rows="4"></textarea>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <table style="width: 450px; column-gap:14px">
+                                <tbody>
+                                    <tr>
+                                
+                                        <td style="width: 45%;">
+                                            <h5>Severity: </h5>
+                                        </td>
+                                        <td>
+                                            <select class="form-control" name="severity">
+                                                <option value="High">High</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="Low">Low</option>
+                                            </select>
+                                        </td>
 
 
+                                    </tr>
+                                    <tr>
+                                        <td style=" vertical-align: top;" >
+                                            <h5>Corrective Measure: </h5>
+                                        </td>
+                                        <td  style=" vertical-align: top;">
+                                            <textarea class="form-control" name="measure" rows="5"></textarea>
+                                   
+                                        </td>
 
+                                    </tr>
+                                    <tr>
+                                        <td style=" vertical-align: top;" >
+                                            <h5>Whom To Contact: </h5>
+                                        </td>
+                                        <td  style=" vertical-align: top;">
+                                            <textarea class="form-control" name="measure" rows="5"></textarea>
+                                   
+                                        </td>
 
-                <br>
-                <h5>A. Working Standards:</h5>
-                <div id="dynamic_field2">
-                    <div class="form-row">
-
-                        <div class="col">
-                            <textarea class="form-control" name="A[0]" placeholder="Activities done" rows="4"></textarea>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="col">
-                            <textarea class="form-control" name="A[1]" placeholder="Interventions" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="A[2]" placeholder="Comment" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="A[3]" placeholder="Completed" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="A[4]" placeholder="Action Taken" rows="4"></textarea>
-                        </div>
+                         
+
+
+                            <br>
+                            <div class="form-row"><br>
+                                <div class="col">
+                                    <button type="submit" id='submit' name="submit" class="btn btn-primary " value="Save">Save the form data</button>
+                                    <button type="button" id='submit' name="submit" class="btn btn-secondary" value="Save">Reset</button>
+                               
+                                </div>
+                            </div>
+                            <br>
+
+                        </form>
                     </div>
+                    <div class="col"></div>
                 </div>
+            </div>
 
+            <!-- Content Row -->
 
+            <?php
+            include('includes/scripts.php');
+            include('includes/footer.php');
+            ?>
 
-
-                <br>
-                <h5>B. Quality:</h5>
-                <div id="dynamic_field3">
-                    <div class="form-row">
-
-                        <div class="col">
-                            <textarea class="form-control" name="B[0]" placeholder="Activities done" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="B[1]" placeholder="Interventions" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="B[2]" placeholder="Comment" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="B[3]" placeholder="Completed" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="B[4]" placeholder="Action Taken" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <h5>C. Site rules:</h5>
-                <div id="dynamic_field3">
-                    <div class="form-row">
-
-                        <div class="col">
-                            <textarea class="form-control" name="C[0]" placeholder="Activities done" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="C[1]" placeholder="Interventions" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="C[2]" placeholder="Comment" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="C[3]" placeholder="Completed" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="C[4]" placeholder="Action Taken" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <h5>D. Environmental :</h5>
-                <div id="dynamic_field2">
-                    <div class="form-row">
-
-                        <div class="col">
-                            <textarea class="form-control" name="D[0]" placeholder="Activities done" rows="4"></textarea>
-                        </div>
-
-                        <div class="col">
-                            <textarea class="form-control" name="D[1]" placeholder="Interventions" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="D[2]" placeholder="Comment" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="D[3]" placeholder="Completed" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="D[4]" placeholder="Action Taken" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <br>
-                <h5>E. Protection of individual:</h5>
-                <div id="dynamic_field3">
-                    <div class="form-row">
-
-                        <div class="col">
-                            <textarea class="form-control" name="E[0]" placeholder="Activities done" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="E[1]" placeholder="Interventions" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="E[2]" placeholder="Comment" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="E[3]" placeholder="Completed" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="E[4]" placeholder="Action Taken" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <h5>F. Tools, Cables & Other equipments:</h5>
-                <div id="dynamic_field3">
-                    <div class="form-row">
-
-                        <div class="col">
-                            <textarea class="form-control" name="F[0]" placeholder="Activities done" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="F[1]" placeholder="Interventions" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="F[2]" placeholder="Comment" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="F[3]" placeholder="Completed" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="F[4]" placeholder="Action Taken" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <h5>G. Miscellaneous:</h5>
-                <div id="dynamic_field3">
-                    <div class="form-row">
-
-                        <div class="col">
-                            <textarea class="form-control" name="G[0]" placeholder="Activities done" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="G[1]" placeholder="Interventions" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="G[2]" placeholder="Comment" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="G[3]" placeholder="Completed" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="G[4]" placeholder="Action Taken" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <h5>Total Interventions by Section:</h5>
-                <div id="dynamic_field3">
-                    <div class="form-row">
-                        <div class="col">
-                            <textarea class="form-control" name="Section" placeholder="Section" rows="4"></textarea>
-                        </div>
-                        <div class="col">
-                            <textarea class="form-control" name="Interventions" placeholder="Interventions" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-
-                <br>
-                <div class="form-row"><br>
-                    <div class="col">
-                        <button type="submit" id='submit' name="submit" class="btn btn-primary " value="Save">Save the form data</button>
-                    </div>
-                </div>
-                <br>
-
-            </form>
         </div>
-        <div class="col"></div>
-    </div>
-</div>
 
-<!-- Content Row -->
-
-<?php
-include('includes/scripts.php');
-include('includes/footer.php');
-?>
-
-    </div>
-                  
 
 </body>
 
