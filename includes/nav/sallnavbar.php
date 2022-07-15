@@ -30,14 +30,14 @@
   Inspections
 </div>
 <!-- Nav Item - Form -->
-<li class="nav-item active">
+<li class="nav-item ">
   <a class="nav-link" href="site_inspection_form.php">
     <i class="fa fa-wpforms"></i>
     <span>Inspection Form</span></a>
 </li>
 
 <!-- Nav Item - All -->
-<li class="nav-item">
+<li class="nav-item active">
   <a class="nav-link"  href="site_inspector_All_Inspections.php">
     <i class="fas fa fa-table"></i>
     <span>All inspections</span></a>

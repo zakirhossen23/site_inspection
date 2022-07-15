@@ -38,7 +38,7 @@
 
 <!-- Nav Item - All -->
 <li class="nav-item">
-  <a class="nav-link" href="#">
+  <a class="nav-link" href="site_inspector_All_Inspections.php">
     <i class="fas fa fa-table"></i>
     <span>All inspections</span></a>
 </li>

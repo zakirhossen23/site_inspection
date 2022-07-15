@@ -27,33 +27,21 @@
 
     if (isset($_POST['submit'])) {
         $date = str_replace("'", "\'", $_POST["date"]);
-        $site =      str_replace("'", "\'", $_POST['site']);
-        $completion =      str_replace("'", "\'", $_POST['completion']);
-        $workarea =     str_replace("'", "\'", $_POST['workarea']);
-        $description =     str_replace("'", "\'", $_POST['description']);
-        $supervisor =         str_replace("'", "\'", $_POST['supervisor']);
-        $inspector =     str_replace("'", "\'", $_POST['inspector']);
-        $inspectiontype =     str_replace("'", "\'", $_POST['inspectiontype']);
-
-        $A = str_replace("'", "\'", $_POST["A"]);
-        $B = str_replace("'", "\'", $_POST["B"]);
-        $C = str_replace("'", "\'", $_POST["C"]);
-        $D = str_replace("'", "\'", $_POST["D"]);
-        $E = str_replace("'", "\'", $_POST["E"]);
-        $F = str_replace("'", "\'", $_POST["F"]);
-        $G = str_replace("'", "\'", $_POST["G"]);
-
-        $Section = str_replace("'", "\'", $_POST["Section"]);
-        $Interventions = str_replace("'", "\'", $_POST["Interventions"]);
-
-
+        $inspector_name = str_replace("'", "\'", $_POST["inspector_name"]);
+        $site_name = str_replace("'", "\'", $_POST["site_name"]);
+        $inspection_type = str_replace("'", "\'", $_POST["inspection_type"]);
+        $title = str_replace("'", "\'", $_POST["title"]);
+        $description = str_replace("'", "\'", $_POST["description"]);
+        $severity = str_replace("'", "\'", $_POST["severity"]);
+        $measure = str_replace("'", "\'", $_POST["measure"]);
+        $Contact = str_replace("'", "\'", $_POST["Contact"]);
         $error = array();
 
         if (empty($date)) {
             $error['error'] = "Date is Empty";
-        } else if (empty($site)) {
-            $error['error'] = "Site is empty";
-        } else if (empty($inspectiontype)) {
+        } else if (empty($site_name)) {
+            $error['error'] = "Site Name is empty";
+        } else if (empty($inspection_type)) {
             $error['error'] = "Inspection Type is empty";
         }
 
@@ -66,8 +54,8 @@
 
         if (count($error) < 1) {
 
-            $query = "INSERT INTO `inspections`( `date`, `site`, `completion`, `workarea`, `description`, `supervisor`, `inspector`, `inspectiontype`, `A1`, `A2`, `A3`, `A4`, `A5`, `B1`, `B2`, `B3`, `B4`, `B5`, `C1`, `C2`, `C3`, `C4`, `C5`, `D1`, `D2`, `D3`, `D4`, `D5`, `E1`, `E2`, `E3`, `E4`, `E5`, `F1`, `F2`, `F3`, `F4`, `F5`, `G1`, `G2`, `G3`, `G4`, `G5`, `Section`, `Interventions`) VALUES 
-            ('$date','$site','$completion','$workarea','$description','$supervisor','$inspector','$inspectiontype','$A[0]','$A[1]','$A[2]','$A[3]','$A[4]','$B[0]','$B[1]','$B[2]','$B[3]','$B[4]','$C[0]','$C[1]','$C[2]','$C[3]','$C[4]','$D[0]','$D[1]','$D[2]','$D[3]','$D[4]','$E[0]','$E[1]','$E[2]','$E[3]','$E[4]','$F[0]','$F[1]','$F[2]','$F[3]','$F[4]','$G[0]','$G[1]','$G[2]','$G[3]','$G[4]','$Section','$Interventions')";
+            $query = "INSERT INTO `inspections`( `date`, `inspector_name`, `site_name`, `inspection_type`, `title`, `description`, `severity`, `measure`, `Contact`) VALUES
+            ('$date','$inspector_name','$site_name','$inspection_type','$title','$description','$severity','$measure','$Contact')";
 
             $res = mysqli_query($connect, $query);
 
@@ -88,7 +76,6 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Site Inspection Form</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
 
         <!-- Content Row -->
@@ -119,20 +106,20 @@
                                         <td>
                                             <h5>Inspector Name:</h5>
                                         </td>
-                                        <td> <input type="text" class="form-control" name="inspector"></td>
+                                        <td> <input type="text" class="form-control" name="inspector_name"></td>
 
                                     </tr>
                                     <tr>
                                         <td>
                                             <h5>Site Name: </h5>
                                         </td>
-                                        <td> <input type="text" class="form-control" name="site"></td>
+                                        <td> <input type="text" class="form-control" name="site_name"></td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <h5>Inspection Type: </h5>
                                         </td>
-                                        <td><input type="text" class="form-control" name="inspectiontype"></td>
+                                        <td><input type="text" class="form-control" name="inspection_type"></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -145,7 +132,7 @@
                                             <h5>Description: </h5>
                                         </td>
                                         <td>
-                                            <textarea class="form-control" name="description" rows="4"></textarea>
+                                            <textarea class="form-control" name="description" rows="description"></textarea>
                                         </td>
                                     </tr>
 
@@ -183,7 +170,7 @@
                                             <h5>Whom To Contact: </h5>
                                         </td>
                                         <td  style=" vertical-align: top;">
-                                            <textarea class="form-control" name="measure" rows="5"></textarea>
+                                            <textarea class="form-control" name="Contact" rows="5"></textarea>
                                    
                                         </td>
 
@@ -192,13 +179,17 @@
                             </table>
                         </div>
                          
-
+                        <br>
+                        <div>
+                            <input type="checkbox" name="genRep" value="Generate Report?"/>
+                            Generate Report?
+                        </div>
 
                             <br>
                             <div class="form-row"><br>
                                 <div class="col">
                                     <button type="submit" id='submit' name="submit" class="btn btn-primary " value="Save">Save the form data</button>
-                                    <button type="button" id='submit' name="submit" class="btn btn-secondary" value="Save">Reset</button>
+                                    <button type="button" class="btn btn-secondary" onclick="reloadThePage()">Reset</button>
                                
                                 </div>
                             </div>
@@ -218,6 +209,11 @@
             ?>
 
         </div>
+        <script>
+function reloadThePage(){
+    window.location.reload();
+} 
+</script>
 
 
 </body>
