@@ -46,9 +46,6 @@
    	 		<a href="index.php" class="nav-link">Login</a>
    	 	</li>
    	 	<li class="nav-item">
-   	 		<a href="admin_register.php" class="nav-link">Register</a>
-   	 	</li>
-   	 	<li class="nav-item">
    	 		<a href="index.php" class="nav-link"></a>
    	 	</li>
               <?php }
