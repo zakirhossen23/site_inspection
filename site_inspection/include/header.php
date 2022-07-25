@@ -11,7 +11,10 @@
 
    
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-   	 <h3 class="navbar-brand text-white">Site Inspection</h3>
+  <a href="index.php">
+
+	  <h3 class="navbar-brand text-white">Site Inspection</h3>
+  </a> 	 
 
 
    	 <div class="mr-auto"></div>
@@ -44,6 +47,9 @@
               <?php }else{ ?>
                   <li class="nav-item">
    	 		<a href="index.php" class="nav-link">Login</a>
+   	 	</li>
+			<li class="nav-item">
+   	 		<a href="register.php" class="nav-link">Register</a>
    	 	</li>
    	 	<li class="nav-item">
    	 		<a href="index.php" class="nav-link"></a>

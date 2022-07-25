@@ -18,7 +18,7 @@ if(isset($_POST['registerbtn']))
     {
         $_SESSION['status'] = "Email Already Taken. Please Try Another one.";
         $_SESSION['status_code'] = "error";
-        header('Location: register.php');
+        header('Location: admin_register.php');
     }
     else
     {
@@ -32,18 +32,18 @@ if(isset($_POST['registerbtn']))
             {
                 // echo "Saved";
                 $_SESSION['success'] = "Admin Profile Added";
-                header('Location: register.php');
+                header('Location: admin_register.php');
             }
             else
             {
                 $_SESSION['status'] = "Admin Profile Not Added";
-                header('Location: register.php');
+                header('Location: admin_register.php');
             }
         }
         else
         {
             $_SESSION['status'] = "Password and Confirm Password Does Not Match";
-            header('Location: register.php');
+            header('Location: admin_register.php');
         }
     }
 
@@ -61,13 +61,13 @@ if(isset($_POST['registerbtn']))
     {
         $_SESSION['status'] = "Your Data is Updated";
         $_SESSION['status_code'] = "success";
-        header('Location: register.php');
+        header('Location: admin_register.php');
     }
     else
     {
         $_SESSION['status'] = "Your Data is NOT Updated";
         $_SESSION['status_code'] = "error";
-        header('Location: register.php');
+        header('Location: admin_register.php');
     }
 }
 
@@ -90,13 +90,13 @@ if(isset($_POST['updatebtn']))
     {
         $_SESSION['status'] = "Your Data is Updated";
         $_SESSION['status_code'] = "success";
-        header('Location: register.php');
+        header('Location: admin_register.php');
     }
     else
     {
         $_SESSION['status'] = "Your Data is NOT Updated";
         $_SESSION['status_code'] = "error";
-        header('Location: register.php');
+        header('Location: admin_register.php');
     }
 }
 
@@ -112,13 +112,13 @@ if(isset($_POST['delete_btn']))
     {
         $_SESSION['status'] = "Your Data is Deleted";
         $_SESSION['status_code'] = "success";
-        header('Location: register.php');
+        header('Location: admin_register.php');
     }
     else
     {
         $_SESSION['status'] = "Your Data is NOT DELETED";
         $_SESSION['status_code'] = "error";
-        header('Location: register.php');
+        header('Location: admin_register.php');
     }
 }
 

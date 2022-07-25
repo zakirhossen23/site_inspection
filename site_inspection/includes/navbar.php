@@ -29,7 +29,7 @@
 
 
 <li class="nav-item">
-  <a class="nav-link" href="register.php">
+  <a class="nav-link" href="admin_register.php">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>User Management</span></a>
 </li>
