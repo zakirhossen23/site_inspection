@@ -16,17 +16,8 @@
 <li class="nav-item active">
   <a class="nav-link" href="manager.php">
     <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>Inspection Dashboard</span></a>
+    <span>All users</span></a>
 </li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-  Interface
-</div>
-
 
 
 <!-- Divider -->

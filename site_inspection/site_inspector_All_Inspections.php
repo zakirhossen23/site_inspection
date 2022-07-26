@@ -24,10 +24,6 @@
     <?php
 
     $output = "";
-
-
-
-
     ?>
 
     <!-- Begin Page Content -->

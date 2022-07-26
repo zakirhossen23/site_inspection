@@ -20,6 +20,44 @@
 </li>
 
 <!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Heading -->
+<div class="sidebar-heading">
+  Interface
+</div>
+
+
+<li class="nav-item">
+  <a class="nav-link" href="admin_register.php">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>User Management</span></a>
+</li>
+
+
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Heading -->
+<div class="sidebar-heading">
+  Addons
+</div>
+
+<!-- Nav Item - Charts -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Charts</span></a>
+</li>
+
+<!-- Nav Item - report -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Report view</span></a>
+</li>
+
+<!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
 
 <!-- Sidebar Toggler (Sidebar) -->
@@ -192,7 +230,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                   
-               USER
+               ADMIN
                   
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">

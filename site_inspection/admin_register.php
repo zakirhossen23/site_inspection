@@ -3,7 +3,7 @@
  ?>
 <?php
 include('includes/header.php');
-include('includes/navbar.php');
+include('includes/anavbar.php');
 ?>
 
 
@@ -84,7 +84,7 @@ include('includes/navbar.php');
     </h6>
   </div>
 
-  <div class="card-body">
+        <div class="card-body">
             <div class="table-responsive">
             <?php
                 $query = "SELECT * FROM users";

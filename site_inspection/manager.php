@@ -9,22 +9,61 @@
 <body>
 
 	<?php
+  $connection=mysqli_connect("localhost","root","","site_inspection");
     include('includes/header.php');
     include('includes/mnavbar.php');
+    include("include/connection.php");
     ?>
 
+<div class="card-body">
+            <div class="table-responsive">
+            <?php
+                $query = "SELECT * FROM users";
+                $query_run = mysqli_query($connection, $query);
+            ?>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                              <th> ID </th>
+                              <th>First name</th>
+                              <th> Last name </th>
+                              <th>Username </th>
+                               <th>Email </th>
+                               <th>Gender </th>
+                               <th>Role </th>
+                               <th>Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if(mysqli_num_rows($query_run) > 0)
+                        {
+                            while($row = mysqli_fetch_assoc($query_run))
+                            {
+                        ?>
+                            <tr>
+                                <td><?php  echo $row['id']; ?></td>
+                                <td><?php  echo $row['firstname']; ?></td>
+                                <td><?php  echo $row['surname']; ?></td>
+                                <td><?php  echo $row['username']; ?></td>
+                                <td><?php  echo $row['email']; ?></td>
+                                <td><?php  echo $row['gender']; ?></td>
+                                <td><?php  echo $row['role']; ?></td>
+                                <td><?php  echo $row['password']; ?></td>
+                               
+                            </tr>
+                        <?php
+                            }
+                        }
+                        else {
+                            echo "No Record Found";
+                        }
+                        ?>
+                    </tbody>
+                </table>
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
-
-  <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-        class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-  </div>
-
-  <!-- Content Row -->
-
+            </div>
+        </div>
   <?php
 include('includes/scripts.php');
 include('includes/footer.php');
