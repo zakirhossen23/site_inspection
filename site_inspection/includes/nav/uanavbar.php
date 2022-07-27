@@ -35,7 +35,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
 <!-- Nav Item - Account -->
 <li class="nav-item active">
   <a class="nav-link" href="user_account.php">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <i class="fas fa-user fa-sm"></i>
     <span>Account</span></a>
 </li>
 
@@ -219,7 +219,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
                  </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="user_account.php">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
