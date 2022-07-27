@@ -14,9 +14,19 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-  <a class="nav-link" href="admin.php">
+  <a class="nav-link" href="user.php">
     <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>Inspection Dashboard</span></a>
+    <span>User Dashboard</span></a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Nav Item - Account -->
+<li class="nav-item">
+  <a class="nav-link" href="user_account.php">
+    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <span>Account</span></a>
 </li>
 
 <!-- Divider -->
