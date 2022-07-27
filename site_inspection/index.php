@@ -30,12 +30,16 @@ if (isset($_POST['login'])) {
     } else {
 
         $query = "SELECT * FROM users WHERE username='$uname' AND role='$role' AND password='$pass'";
-        $res = mysqli_query($connect, $query);
+        $res =  $connect->query($query);
 
+        while ($row = $res->fetch_array()) 
+        {
+            $_SESSION['userid'] = $row['id'];
+        }
         if (mysqli_num_rows($res) == 1) {
 
             if ($role == "Manager") {
-
+               
                 $_SESSION['manager'] = $uname;
                 header("Location: manager.php");
             } else if ($role == "Admin") {

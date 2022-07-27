@@ -1,4 +1,14 @@
-   <!-- Sidebar -->
+
+<?php
+
+include("include/connection.php");
+
+$userid = $_SESSION["userid"];
+$user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id = $userid"));
+?>
+
+ 
+ <!-- Sidebar -->
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
@@ -205,8 +215,8 @@
                USER
                   
                 </span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
+                  <img class="img-profile rounded-circle" src='UploadedImages/<?php echo $user["image"] ?>'>
+                 </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
