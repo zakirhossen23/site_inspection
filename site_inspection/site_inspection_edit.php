@@ -17,7 +17,11 @@
 
     <?php
     include('includes/header.php');
-    include('includes/snavbar.php');
+    if (isset($_SESSION['manager'])) {
+        include('includes/mnavbar.php');
+    } else if (isset($_SESSION['site_inspector'])) {
+        include('includes/snavbar.php');
+    }
     include("include/connection.php");
     ?>
 

@@ -18,7 +18,7 @@ if(isset($_POST['registerbtn']))
     {
         $_SESSION['status'] = "Email Already Taken. Please Try Another one.";
         $_SESSION['status_code'] = "error";
-        header('Location: admin_register.php');
+        header('Location: manager_register.php');
     }
     else
     {
@@ -31,13 +31,13 @@ if(isset($_POST['registerbtn']))
             if($query_run)
             {
                 // echo "Saved";
-                $_SESSION['success'] = "Admin Profile Added";
-                header('Location: admin_register.php');
+                $_SESSION['success'] = "Profile Added";
+                header('Location: manager_register.php');
             }
             else
             {
-                $_SESSION['status'] = "Admin Profile Not Added";
-                header('Location: admin_register.php');
+                $_SESSION['status'] = "Profile Not Added";
+                header('Location: manager_register.php');
             }
         }
         else
@@ -61,13 +61,13 @@ if(isset($_POST['registerbtn']))
     {
         $_SESSION['status'] = "Your Data is Updated";
         $_SESSION['status_code'] = "success";
-        header('Location: admin_register.php');
+        header('Location: manager_register.php');
     }
     else
     {
         $_SESSION['status'] = "Your Data is NOT Updated";
         $_SESSION['status_code'] = "error";
-        header('Location: admin_register.php');
+        header('Location: manager_register.php');
     }
 }
 
@@ -90,13 +90,13 @@ if(isset($_POST['updatebtn']))
     {
         $_SESSION['status'] = "Your Data is Updated";
         $_SESSION['status_code'] = "success";
-        header('Location: admin_register.php');
+        header('Location: manager_register.php');
     }
     else
     {
         $_SESSION['status'] = "Your Data is NOT Updated";
         $_SESSION['status_code'] = "error";
-        header('Location: admin_register.php');
+        header('Location: manager_register.php');
     }
 }
 
@@ -119,6 +119,28 @@ if(isset($_POST['delete_btn']))
         $_SESSION['status'] = "Your Data is NOT DELETED";
         $_SESSION['status_code'] = "error";
         header('Location: admin_register.php');
+    }
+}
+
+
+if(isset($_POST['delete_btn_inspection']))
+{
+    $id = $_POST['delete_id'];
+
+    $query = "DELETE FROM inspections WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        $_SESSION['status'] = "Your Data is Deleted";
+        $_SESSION['status_code'] = "success";
+        header('Location: site_inspector_All_Inspections.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Your Data is NOT DELETED";
+        $_SESSION['status_code'] = "error";
+        header('Location: site_inspector_All_Inspections.php');
     }
 }
 

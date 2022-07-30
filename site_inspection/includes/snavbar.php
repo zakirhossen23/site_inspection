@@ -54,6 +54,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
 </li>
 
 
+
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
 
@@ -66,7 +67,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
 
       <!-- Main Content -->
       <div id="content">
-
+      
         <!-- Topbar -->
         <nav class="navbar navbar-expand  topbar mb-4 static-top " style="background: #F8F9FC;border: 2px solid #F8F9FC;">
         <!-- Topbar Navbar -->

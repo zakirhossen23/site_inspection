@@ -17,7 +17,13 @@
 
     <?php
     include('includes/header.php');
-    include('includes/snavbar.php');
+
+    if (isset($_SESSION['manager'])) {
+        include('includes/mnavbar.php');
+    } else if (isset($_SESSION['site_inspector'])) {
+        include('includes/snavbar.php');
+    }
+
     include("include/connection.php");
     ?>
 
@@ -34,7 +40,7 @@
         <h1 class="h3 mb-0 text-gray-800" style="top: 20px;left: 122px;font-weight: bold;position: absolute;">All Inspections</h1>
         <!-- Content Row -->
         <?php include("include/head.php"); ?>
-        <div style="margin: 0 0 0 1px;">
+        <div style="margin: 0 0 0 0px;" class="card shadow mb-4">
             <!-- Content Row -->
             <div class="table-responsive">
                 <?php
@@ -79,7 +85,7 @@
                                     <td>
                                         <form action="code.php" method="post">
                                             <input type="hidden" name="delete_id" value="<?php echo $row['ID']; ?>">
-                                            <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
+                                            <button type="submit" name="delete_btn_inspection" class="btn btn-danger"> DELETE</button>
                                         </form>
                                     </td>
                                 </tr>

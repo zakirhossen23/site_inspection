@@ -6,11 +6,7 @@ include("include/connection.php");
 $output = "";
 
 if (isset($_SESSION['manager'])) {
-    header("Location: manager.php");
-}else if(isset($_SESSION['admin'])){
-    header("Location: admin.php");
-}else if(isset($_SESSION['user'])){
-    header("Location: user.php");
+    header("Location: manager_register.php");
 }else if(isset($_SESSION['site_inspector'])){
     $_SESSION['site_inspector'] = $uname;
     header("Location: site_inspector.php");
@@ -41,16 +37,8 @@ if (isset($_POST['login'])) {
             if ($role == "Manager") {
                
                 $_SESSION['manager'] = $uname;
-                header("Location: manager.php");
-            } else if ($role == "Admin") {
-
-                $_SESSION['admin'] = $uname;
-                header("Location: admin.php");
-            } else if ($role == "user") {
-
-                $_SESSION['user'] = $uname;
-                header("Location: user.php");
-            } else if ($role == "Site_inspector") {
+                header("Location: manager_register.php");
+            }else if ($role == "Site_inspector") {
 
                 $_SESSION['site_inspector'] = $uname;
                 header("Location: site_inspector.php");
