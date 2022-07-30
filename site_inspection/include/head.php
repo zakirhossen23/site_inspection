@@ -6,8 +6,5 @@
 </head>
 <body>
 
-   		<a href="Site_inspector.php" class="nav-link"></a>
-
-
 </body>
 </html>

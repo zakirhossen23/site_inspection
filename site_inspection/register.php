@@ -117,7 +117,6 @@ if (isset($_POST['register'])) {
                             <select name="role" class="form-control my-2">
                                 <option value="">Selete Role</option>
                                 <option value="Site_inspector">Site_inspector</option>
-                                <option value="Manager">Manager</option>
                             </select>
 
                             <label>Password</label>

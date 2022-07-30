@@ -10,9 +10,9 @@ if (isset($_SESSION['manager'])) {
 }else if(isset($_SESSION['user'])){
 	unset($_SESSION['user']);
 	header("Location:index.php");
-}else if(isset($_SESSION['site_inspector'])){
+}else if(isset($_SESSION['Site_Inspector'])){
 	unset($_SESSION['site_inspector']);
-	header("Location:index.php");
+	header("Location:index.php");	
 }
-
+header("Location:index.php");	
  ?>

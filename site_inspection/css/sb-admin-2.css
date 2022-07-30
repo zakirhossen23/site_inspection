@@ -11374,11 +11374,12 @@ a:focus {
 }
 
 .sidebar-light .nav-item.active .nav-link {
-  color: #6e707e;
+  color: #34B4D7;
+  border-right: 5px solid #34B4D7;
 }
 
 .sidebar-light .nav-item.active .nav-link i {
-  color: #6e707e;
+  color: #34B4D7;
 }
 
 .sidebar-light #sidebarToggle {

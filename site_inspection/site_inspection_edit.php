@@ -90,16 +90,16 @@
     <div class="container-fluid">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Site Inspection</h1>
+            
         </div>
-
+<h1 class="h3 mb-0 text-gray-800" style="top: 20px;left: 150px;font-weight: bold;position: absolute;">Edit Site Inspection</h1>
         <!-- Content Row -->
         <div class="row">
 
 
             <!-- Content Row -->
             <?php include("include/head.php"); ?>
-            <div class="container">
+            <div style="margin: 0 0 0 40px;">
                 <div>
                     <div class="col"></div>
                     <div>
@@ -193,12 +193,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-
-                            <br>
-                            <div>
-                                <input type="checkbox" name="genRep" value="Generate Report?" />
-                                Generate Report?
                             </div>
 
                             <br>
