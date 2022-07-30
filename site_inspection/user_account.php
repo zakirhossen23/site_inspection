@@ -101,7 +101,7 @@ if (isset($_POST['save'])) {
     <body>
         <?php
         include('includes/header.php');
-        include('includes/nav/uanavbar.php');
+        include('includes/navbar.php');
         ?>
         <div class="container">
             <div class="col-md-12">

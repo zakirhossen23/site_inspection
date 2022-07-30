@@ -22,7 +22,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
 <hr class="sidebar-divider my-0">
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item active">
+<li class="nav-item ">
   <a class="nav-link" href="manager.php">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>All users</span></a>
@@ -32,23 +32,11 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-<!-- Heading -->
-<div class="sidebar-heading">
-  Addons
-</div>
-
-<!-- Nav Item - Charts -->
-<li class="nav-item">
-  <a class="nav-link" href="#">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Charts</span></a>
-</li>
-
 <!-- Nav Item - report -->
 <li class="nav-item">
-  <a class="nav-link" href="#">
+  <a class="nav-link" href="manager_register.php">
     <i class="fas fa-fw fa-table"></i>
-    <span>Report view</span></a>
+    <span>Register Inspectors</span></a>
 </li>
 
 <!-- Divider -->
@@ -69,7 +57,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light  topbar mb-4 static-top shadow"style="background:#278DBC;">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -222,7 +210,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                <span class="mr-2 d-none d-lg-inline text-white-600 small">
 
                Manager
 
@@ -288,3 +276,13 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
       </div>
     </div>
   </div>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    $(function(){
+        $('a').each(function(){
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active'); $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>

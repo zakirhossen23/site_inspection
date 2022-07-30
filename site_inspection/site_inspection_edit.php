@@ -17,7 +17,7 @@
 
     <?php
     include('includes/header.php');
-    include('includes/nav/sfnavbar.php');
+    include('includes/snavbar.php');
     include("include/connection.php");
     ?>
 

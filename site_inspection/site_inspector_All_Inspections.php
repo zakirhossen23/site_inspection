@@ -17,7 +17,7 @@
 
     <?php
     include('includes/header.php');
-    include('includes/nav/sallnavbar.php');
+    include('includes/snavbar.php');
     include("include/connection.php");
     ?>
 
@@ -56,6 +56,8 @@
                                     <th>Severity</th>
                                     <th>Site Name</th>
                                     <th>Whom To Contact</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>

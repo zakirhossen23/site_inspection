@@ -25,7 +25,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
 <hr class="sidebar-divider my-0">
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item active">
+<li class="nav-item ">
   <a class="nav-link" href="site_inspector.php">
     <i class="fas fa fa-tachometer-alt"></i>
     <span>Inspection Dashboard</span></a>
@@ -53,20 +53,6 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
     <span>All inspections</span></a>
 </li>
 
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-  Addons
-</div>
-
-<!-- Nav Item - report -->
-<li class="nav-item">
-  <a class="nav-link" href="#">
-    <i class="fa fa-table"></i>
-    <span>Report view</span></a>
-</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
@@ -292,3 +278,14 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
       </div>
     </div>
   </div>
+
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    $(function(){
+        $('a').each(function(){
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active'); $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>

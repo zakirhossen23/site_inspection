@@ -81,7 +81,7 @@ if (isset($_POST['login'])) {
     <title>Site Inspection System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-<body style="background-color:grey; color:white">
+<body style="background-color:#EDF1F5; color:white">
     </head>
 
     <body>
@@ -92,11 +92,12 @@ if (isset($_POST['login'])) {
         <div class="container">
             <div class="col-md-12">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-6 shadow-sm" style="margin-top:100px;">
+                    <div class="col-md-6 shadow-sm" style="margin-top:100px;background: white;color: black;max-width: 450px;height: 400px;border-radius: 10px;">
                         <form method="post">
                             <h3 class="text-center my-3">Login</h3>
                             <div class="text-center"><?php echo $output; ?></div>
-                            <l6abel>Username</label>
+                            <div>
+                                  <label>Username</label>
                                 <input type="text" name="uname" class="form-control my-2" placeholder="Enter Username" autocomplete="off">
 
                                 <label>Select Role</label>
@@ -104,14 +105,15 @@ if (isset($_POST['login'])) {
                                     <option value="">Selete Role</option>
                                     <option value="Site_inspector">Site_inspector</option>
                                     <option value="Manager">Manager</option>
-                                    <option value="Admin">Admin</option>
-                                    <option value="user">user</option>
                                 </select>
 
                                 <label>Password</label>
                                 <input type="password" name="pass" class="form-control my-2" placeholder="Enter Password">
 
-                                <input type="submit" name="login" class="btn btn-success" value="Login">
+                            </div>
+                              
+
+                                <input type="submit" name="login" class="btn btn-success" style="width: 100%;margin-top: 15px;" value="Login">
                         </form>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
 <body>
 
    
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <nav class="navbar navbar-expand-lg navbar-dark" style="background:#278DBC">
   <a href="index.php">
 
 	  <h3 class="navbar-brand text-white">Site Inspection</h3>
