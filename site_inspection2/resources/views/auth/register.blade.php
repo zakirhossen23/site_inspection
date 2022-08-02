@@ -9,11 +9,12 @@
    <link rel="stylesheet" href="{{ asset('bootstrap-3.1.1/css/bootstrap.min.css') }}">
 </head>
 
-<body>
+<body style="background-color: #F1F5F8">
+@include('componenet\header')
 
    <div class="container">
-      <div class="row" style="margin-top:45px">
-         <div class="col-md-4 col-md-offset-4">
+      <div class="row" >
+         <div class="col-md-4 col-md-offset-4" style="background: white;padding: 25px;">
             <h4>Register | Site Inspection</h4>
             <hr>
             <form action="{{ route('auth.save') }}" method="post">
@@ -55,7 +56,6 @@
                   <select class="form-control" name="role" aria-label="Role" >
                      <option selected>Select Role</option>
                      <option value="site_inspector">Site_inspector</option>
-                     <option value="manager">Manager</option>
                   </select>
                   <span class="text-danger">@error('role'){{ $message }} @enderror</span>
                </div>

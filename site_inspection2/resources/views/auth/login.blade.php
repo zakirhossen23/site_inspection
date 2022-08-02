@@ -9,11 +9,12 @@
    <link rel="stylesheet" href="{{ asset('bootstrap-3.1.1/css/bootstrap.min.css') }}">
 </head>
 
-<body>
+<body style="background-color: #F1F5F8">
+   @include('componenet\header')
 
    <div class="container">
       <div class="row" style="margin-top:45px">
-         <div class="col-md-4 col-md-offset-4">
+         <div class="col-md-4 col-md-offset-4" style="background: white;padding: 25px;"> 
             <h4>Login | Site Inspection</h4>
             <hr>
             <form action="{{ route('auth.check') }}" method="post">

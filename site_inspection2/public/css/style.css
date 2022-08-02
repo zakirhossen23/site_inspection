@@ -1,0 +1,195 @@
+
+  
+  /* =======================================================
+  *
+  * 	Template Style 
+  *
+  * ======================================================= */
+  body {
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 2;
+    color: gray;
+    background: whitesmoke;
+  }
+  
+  #page {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .offcanvas #page {
+    overflow: hidden;
+    position: absolute;
+  }
+  
+  .offcanvas #page:after {
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 101;
+    background: rgba(0, 0, 0, 0.7);
+    content: "";
+  }
+  
+  a {
+    color: #4aca85;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  a:hover,
+  a:active,
+  a:focus {
+    color: #4aca85;
+    outline: none;
+    text-decoration: none;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  figure {
+    color: #303133;
+    font-family: "Nunito", Arial, sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+  }
+  
+  ::-webkit-selection {
+    color: #fff;
+    background: #4aca85;
+  }
+  
+  ::-moz-selection {
+    color: #fff;
+    background: #4aca85;
+  }
+  
+  ::selection {
+    color: #fff;
+    background: #4aca85;
+  }
+  
+  .product-img,
+  .work-img,
+  .author-img,
+  .mobile-img,
+  .colorlib-video,
+  .blog-img,
+  .colorlib-about-img,
+  .services-img,
+  .staff-img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .colorlib-nav {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    margin: 0 auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .colorlib-nav {
+      margin: 0;
+    }
+  }
+  
+  .colorlib-nav .top-menu {
+    padding: 30px 30px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .colorlib-nav .top-menu {
+      padding: 28px 1em;
+    }
+  }
+  
+  .colorlib-nav #colorlib-logo {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  .colorlib-nav #colorlib-logo a {
+    position: relative;
+  }
+  
+  .colorlib-nav #colorlib-logo a i {
+    display: block;
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .colorlib-nav .menu-1 {
+      display: none;
+    }
+  }
+  
+  .colorlib-nav ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .colorlib-nav ul li {
+    padding: 8px 0;
+    margin: 0;
+    list-style: none;
+    display: inline;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  
+  .colorlib-nav ul li a {
+    position: relative;
+    padding: 20px 12px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .colorlib-nav ul li a:hover {
+    color: #428bca;
+  }
+  a:link { text-decoration: none !important; }
+a:visited { text-decoration: none !important; }
+a:hover { text-decoration: none !important; }
+a:active { text-decoration: none !important; }
+
+  .colorlib-nav ul li.has-dropdown {
+    position: relative;
+  }
+  
