@@ -27,14 +27,19 @@
 
     if (isset($_POST['submit'])) {
         $date = str_replace("'", "\'", $_POST["date"]);
-        $inspector_name = str_replace("'", "\'", $_POST["inspector_name"]);
-        $site_name = str_replace("'", "\'", $_POST["site_name"]);
-        $inspection_type = str_replace("'", "\'", $_POST["inspection_type"]);
-        $title = str_replace("'", "\'", $_POST["title"]);
-        $description = str_replace("'", "\'", $_POST["description"]);
-        $severity = str_replace("'", "\'", $_POST["severity"]);
-        $measure = str_replace("'", "\'", $_POST["measure"]);
+        $client_name = str_replace("'", "\'", $_POST["client_name"]);
+        $client_representative = str_replace("'", "\'", $_POST["client_representative"]);
+        $site_address = str_replace("'", "\'", $_POST["site_address"]);
+        $equipment = str_replace("'", "\'", $_POST["equipment"]);
+        $consumablese = str_replace("'", "\'", $_POST["consumablese"]);
+        $qoute = str_replace("'", "\'", $_POST["qoute"]);
+        $place = str_replace("'", "\'", $_POST["place"]);
         $Contact = str_replace("'", "\'", $_POST["Contact"]);
+        $expire = str_replace("'", "\'", $_POST["expire"]);
+        $contractors = str_replace("'", "\'", $_POST["contractors"]);
+        $price = str_replace("'", "\'", $_POST["price"]);
+        $inspector = str_replace("'", "\'", $_POST["inspector"]);
+
         $error = array();
 
         if (empty($date)) {
@@ -54,8 +59,7 @@
 
         if (count($error) < 1) {
 
-            $query = "INSERT INTO `inspections`( `date`, `inspector_name`, `site_name`, `inspection_type`, `title`, `description`, `severity`, `measure`, `Contact`) VALUES
-            ('$date','$inspector_name','$site_name','$inspection_type','$title','$description','$severity','$measure','$Contact')";
+            $query = "INSERT INTO `inspections`( `date`, `client_name`, `client_representative`, `site_address`, `equipment`, `consumablese`, `qoute`, `place`, `Contact`, `expire`, `contractors`, `price`, `inspector`) VALUES ('$date','$client_name','$client_representative','$site_address','$equipment','$consumablese','$qoute','$place','$Contact','$contractors','$price','$inspector')";
 
             $res = mysqli_query($connect, $query);
 
@@ -75,7 +79,7 @@
     <div class="container-fluid">
         <!-- Page Heading -->
         <h1 class="h3 mb-0 text-gray-800" style="top: 20px;left: 150px;font-weight: bold;position: absolute;">Site Inspection Form</h1>
-        
+
         <!-- Content Row -->
         <div class="row">
 
@@ -85,105 +89,114 @@
             <div style="margin: 0 0 0 40px;">
                 <div>
                     <div class="col"></div>
-                    <div >
+                    <div>
                         <div class="text-center"><?php echo $output; ?></div>
                         <form action="" method="post" enctype="">
-                        <div style="display: flex;">
-                            <table style="width: 550px; column-gap:14px">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 21%;">
-                                            <h5>Date: </h5>
-                                        </td>
-                                        <td style="width: 26%;"><input type="date" class="form-control" name="date" /></td>
+                            <div style="display: flex;">
+                                <table style="width: 550px; column-gap:14px">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 21%;">
+                                                <h5>Date: </h5>
+                                            </td>
+                                            <td style="width: 26%;"><input type="date" class="form-control" name="date" /></td>
+                                        </tr>
 
-                                        <td style="width: 3%;"></td>
-                                    </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Client Name:</h5>
+                                            </td>
+                                            <td> <input type="text" class="form-control" name="client_name"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Client Representative:</h5>
+                                            </td>
+                                            <td> <input type="text" class="form-control" name="client_representative"></td>
 
-                                    <tr>
-                                        <td>
-                                            <h5>Inspector Name:</h5>
-                                        </td>
-                                        <td> <input type="text" class="form-control" name="inspector_name"></td>
+                                        </tr>
 
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5>Site Name: </h5>
-                                        </td>
-                                        <td> <input type="text" class="form-control" name="site_name"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5>Inspection Type: </h5>
-                                        </td>
-                                        <td><input type="text" class="form-control" name="inspection_type"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5>Title: </h5>
-                                        </td>
-                                        <td><input type="text" class="form-control" name="title"></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top;">
-                                            <h5>Description: </h5>
-                                        </td>
-                                        <td>
-                                            <textarea class="form-control" name="description" rows="description"></textarea>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Site Address: </h5>
+                                            </td>
+                                            <td> <input type="text" class="form-control" name="site_address"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Equipment: </h5>
+                                            </td>
+                                            <td><textarea class="form-control" name="equipment"></textarea> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Consumables: </h5>
+                                            </td>
+                                            <td><textarea class="form-control" name="consumablese"></textarea> </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: top;">
+                                                <h5>Qoute needed by: </h5>
+                                            </td>
+                                            <td>
+                                                <input type="date" class="form-control" name="qoute" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style=" vertical-align: top;">
+                                                <h5>Current hours in place: </h5>
+                                            </td>
+                                            <td style=" vertical-align: top;">
+                                                <textarea class="form-control" name="place" rows="5"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table style="width: 450px; column-gap:14px">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 45%;">
+                                                <h5>Current Contract Expires: </h5>
+                                            </td>
+                                            <td>
+                                                <input type="date" class="form-control" name="expire" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style=" vertical-align: top;">
+                                                <h5>Why are you looking to change contractors: </h5>
+                                            </td>
+                                            <td style=" vertical-align: top;">
+                                                <textarea class="form-control" name="contractors" rows="5"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style=" vertical-align: top;">
+                                                <h5>Do you have price/Budget:</h5>
+                                            </td>
+                                            <td style=" vertical-align: top;">
+                                                <textarea class="form-control" name="price" rows="5"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style=" vertical-align: top;">
+                                                <h5>Inspector Name: </h5>
+                                            </td>
+                                            <td style=" vertical-align: top;">
+                                                <textarea class="form-control" name="inspector" rows="5"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
-                                </tbody>
-                            </table>
-                            <table style="width: 450px; column-gap:14px">
-                                <tbody>
-                                    <tr>
-                                
-                                        <td style="width: 45%;">
-                                            <h5>Severity: </h5>
-                                        </td>
-                                        <td>
-                                            <select class="form-control" name="severity">
-                                                <option value="High">High</option>
-                                                <option value="Medium">Medium</option>
-                                                <option value="Low">Low</option>
-                                            </select>
-                                        </td>
-
-
-                                    </tr>
-                                    <tr>
-                                        <td style=" vertical-align: top;" >
-                                            <h5>Corrective Measure: </h5>
-                                        </td>
-                                        <td  style=" vertical-align: top;">
-                                            <textarea class="form-control" name="measure" rows="5"></textarea>
-                                   
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td style=" vertical-align: top;" >
-                                            <h5>Whom To Contact: </h5>
-                                        </td>
-                                        <td  style=" vertical-align: top;">
-                                            <textarea class="form-control" name="Contact" rows="5"></textarea>
-                                   
-                                        </td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                         
 
                             <br>
                             <div class="form-row"><br>
                                 <div class="col">
                                     <button type="submit" id='submit' name="submit" class="btn btn-primary " value="Save">Save the form data</button>
                                     <button type="button" class="btn btn-secondary" onclick="reloadThePage()">Reset</button>
-                               
+
                                 </div>
                             </div>
                             <br>
@@ -203,10 +216,10 @@
 
         </div>
         <script>
-function reloadThePage(){
-    window.location.reload();
-} 
-</script>
+            function reloadThePage() {
+                window.location.reload();
+            }
+        </script>
 
 
 </body>
