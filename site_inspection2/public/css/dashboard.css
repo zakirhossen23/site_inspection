@@ -167,16 +167,16 @@ table thead tr {
 .table tbody tr:last-of-type {
   border-bottom: 2px solid #4AD489;
 }
-
-.Add-User button {
+.Add-User a {
   padding: 10px 20px;
   cursor: pointer;
+  width: auto;
   border-radius: 10px;
   background: transparent;
   border: 1px solid #4AD489;
 }
 
-.Add-User button:hover {
+.Add-User a:hover {
   background: #4AD489;
   color: #fff;
   transition: 0.5s;

@@ -25,7 +25,7 @@
          <section class="inspector">
             <div class="inspector-list">
                <div class="Add-User">
-                  <button>Add Inspector</button>
+                  <a href="register">Add Inspector</a>
                </div>
                <table class="table">
                   <thead>
@@ -38,34 +38,16 @@
                      </tr>
                   </thead>
                   <tbody>
+                     @foreach ($Inspectors as $inspector)
                      <tr>
-                        <td>01</td>
-                        <td>Sam David</td>
-                        <td>Design</td>
-                        <td>03-24-22</td>
-                        <td>8:00AM</td>
+                        <td>{{ $inspector->id }}</td>
+                        <td>{{ $inspector->fullname }}</td>
+                        <td>{{ $inspector->email }}</td>
+                        <td>{{ $inspector->gender }}</td>
+                        <td>{{ $inspector->role }}</td>
                      </tr>
-                     <tr class="active">
-                        <td>02</td>
-                        <td>Balbina Kherr</td>
-                        <td>Coding</td>
-                        <td>03-24-22</td>
-                        <td>9:00AM</td>
-                     </tr>
-                     <tr>
-                        <td>03</td>
-                        <td>Badan John</td>
-                        <td>testing</td>
-                        <td>03-24-22</td>
-                        <td>8:00AM</td>
-                     </tr>
-                     <tr>
-                        <td>04</td>
-                        <td>Sara David</td>
-                        <td>Design</td>
-                        <td>03-24-22</td>
-                        <td>8:00AM</td>
-                     </tr>
+                     @endforeach
+
                   </tbody>
                </table>
             </div>

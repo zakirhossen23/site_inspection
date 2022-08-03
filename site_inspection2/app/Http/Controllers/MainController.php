@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\inspections;
 use Illuminate\Support\Facades\Hash;
 
 class MainController extends Controller
@@ -84,19 +85,24 @@ class MainController extends Controller
 
     function dashboard()
     {
-        $data = ['LoggedUserInfo' => User::where('id', '=', session('LoggedUser'))->first()];
+        $data = ['Inspectors' => User::where('role', '=', 'site_inspector')->get()];
         if (session('LoggedRole') === "manager") {
             return view('manager.dashboard', $data);
         }
-       
+    }
+
+    function RegisterInspector()
+    {
+        if (session('LoggedRole') === "manager") {
+            return view('manager.register');
+        }
     }
 
     function AllInspections()
     {
-        $data = ['LoggedUserInfo' => User::where('id', '=', session('LoggedUser'))->first()];
+        $data = ['AllInspections' => inspections::get()];
         if (session('LoggedRole') === "manager") {
             return view('manager.inspections', $data);
         }
-       
     }
 }

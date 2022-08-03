@@ -43,34 +43,23 @@
                      </tr>
                   </thead>
                   <tbody>
+                  @foreach ($AllInspections as $inspection)
                      <tr>
-                        <td>01</td>
-                        <td>03-24-22</td>
-                        <td>Sam David</td>
-                        <td>Design</td>
-                        <td>8:00AM</td>
+                        <td>{{ $inspection->id }}</td>
+                        <td>{{ $inspection->date }}</td>
+                        <td>{{ $inspection->client_name }}</td>
+                        <td>{{ $inspection->site_address }}</td>
+                        <td>{{ $inspection->equipment }}</td>
+                        <td>{{ $inspection->place }}</td>
+                        <td>{{ $inspection->Contact }}</td>
+                        <td>{{ $inspection->contractors }}</td>
+                        <td>{{ $inspection->price }}</td>
+                        <td>{{ $inspection->inspector }}</td>
+                        <td><button>Edit</button></td>
+                        <td><button>Delete</button></td>
                      </tr>
-                     <tr >
-                        <td>02</td>
-                        <td>03-24-22</td>
-                        <td>Balbina Kherr</td>
-                        <td>Coding</td>
-                        <td>9:00AM</td>
-                     </tr>
-                     <tr>
-                        <td>03</td>
-                        <td>03-24-22</td>
-                        <td>Badan John</td>
-                        <td>testing</td>
-                        <td>8:00AM</td>
-                     </tr>
-                     <tr>
-                        <td>04</td>
-                        <td>03-24-22</td>
-                        <td>Sara David</td>
-                        <td>Design</td>
-                        <td>8:00AM</td>
-                     </tr>
+                     @endforeach
+
                   </tbody>
                </table>
             </div>
