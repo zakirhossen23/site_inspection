@@ -12,10 +12,10 @@
 <body>
    <div class="container">
       @include('componenet\nav\inspectornav')
-   
+
       <section class="main">
          <div class="main-top">
-         <h1>All Inspections</h1>
+            <h1>All Inspections</h1>
             <div>
                Inspector
                <i class="fas fa-user"></i>
@@ -25,6 +25,19 @@
          <section class="inspector">
             <div class="inspector-list">
 
+               @if(Session::get('success'))
+               <div class="alert alert-success">
+                  {{ Session::get('success') }}
+               </div>
+               @endif
+
+               @if(Session::get('fail'))
+               <div class="alert alert-danger">
+                  {{ Session::get('fail') }}
+               </div>
+               @endif
+
+               @csrf
                <table class="table">
                   <thead>
                      <tr>
@@ -53,8 +66,20 @@
                         <td>{{ $inspection->contractors }}</td>
                         <td>{{ $inspection->price }}</td>
                         <td>{{ $inspection->inspector }}</td>
-                        <td><button>Edit</button></td>
-                        <td><button>Delete</button></td>
+                        <td>
+                           <form action="/inspection/edit" method="get">
+                              <input type="hidden" name="edit_id" value="{{ $inspection->id }}">
+                              <button type="submit">EDIT</button>
+                           </form>
+
+                        </td>
+                        <td>
+                           <form action="/inspection/delete" method="get">
+                              <input type="hidden" name="id" value="{{ $inspection->id }}">
+                              <button type="submit">Delete</button>
+                           </form>
+
+                        </td>
                      </tr>
                      @endforeach
 

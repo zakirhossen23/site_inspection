@@ -3,7 +3,7 @@
 
 <head>
    <meta charset="UTF-8" />
-   <title>Inspector Form | Site Inspection</title>
+   <title>Edit Inspection | Site Inspection</title>
    <!-- Font Awesome Cdn Link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
    <link rel="stylesheet" href="{{ asset('bootstrap-3.1.1/css/bootstrap.min.css') }}">
@@ -18,7 +18,7 @@
 
       <section class="main">
          <div class="main-top">
-            <h1>Site Inspection Form</h1>
+            <h1>Edit Inspection</h1>
             <div>
                Inspector
                <i class="fas fa-user"></i>
@@ -33,8 +33,9 @@
                      <div>
                         <div>
 
-                           <form action="{{ route('inspection.save') }}" method="post">
+                           <form action="{{ route('inspection.update') }}" method="post">
 
+                              <input type="hidden" name="id" value="{{ $InspectionDetails->id }}" />
                               @if(Session::get('success'))
                               <div class="alert alert-success">
                                  {{ Session::get('success') }}
@@ -55,7 +56,7 @@
                                           <td style="width: 21%;">
                                              <h5>Date: </h5>
                                           </td>
-                                          <td style="width: 26%;"><input type="date" class="form-control" name="date" /></td>
+                                          <td style="width: 26%;"><input value="{!! date('Y-m-j', strtotime($InspectionDetails->date)) !!}" type="date" class="form-control" name="date" /></td>
 
                                        </tr>
 
@@ -69,7 +70,7 @@
                                           <td>
                                              <h5>Client Name:</h5>
                                           </td>
-                                          <td> <input type="text" class="form-control" name="client_name"></td>
+                                          <td> <input type="text" value="{{ $InspectionDetails->client_name }}" class="form-control" name="client_name"></td>
                                        </tr>
                                        <tr>
                                           <td style="width: 100%;">
@@ -81,7 +82,7 @@
                                           <td>
                                              <h5>Client Representative:</h5>
                                           </td>
-                                          <td> <input type="text" class="form-control" name="client_representative"></td>
+                                          <td> <input type="text" value="{{ $InspectionDetails->client_representative }}" class="form-control" name="client_representative"></td>
                                        </tr>
                                        <tr>
                                           <td style="width: 100%;">
@@ -94,7 +95,7 @@
                                           <td>
                                              <h5>Site Address: </h5>
                                           </td>
-                                          <td> <input type="text" class="form-control" name="site_address"></td>
+                                          <td> <input type="text" value="{{ $InspectionDetails->site_address }}" class="form-control" name="site_address"></td>
                                        </tr>
                                        <tr>
                                           <td style="width: 100%;">
@@ -106,7 +107,7 @@
                                           <td>
                                              <h5>Equipment: </h5>
                                           </td>
-                                          <td><textarea class="form-control" rows="5" name="equipment"></textarea> </td>
+                                          <td><textarea class="form-control" rows="5" name="equipment">{{ $InspectionDetails->client_name }}</textarea> </td>
                                        </tr>
                                        <tr>
                                           <td style="width: 100%;">
@@ -119,7 +120,7 @@
                                              <h5>Qoute needed by: </h5>
                                           </td>
                                           <td>
-                                             <input type="date" class="form-control" name="qoute" />
+                                             <input type="date" value="{!! date('Y-m-j', strtotime($InspectionDetails->qoute)) !!}" class="form-control" name="qoute" />
                                           </td>
                                        </tr>
                                        <tr>
@@ -133,7 +134,7 @@
                                              <h5>Current Contract Expires: </h5>
                                           </td>
                                           <td>
-                                             <input type="date" class="form-control" name="expire" />
+                                             <input type="date" value="{!! date('Y-m-j', strtotime($InspectionDetails->expire)) !!}" class="form-control" name="expire" />
                                           </td>
                                        </tr>
                                        <tr>
@@ -148,7 +149,7 @@
                                              <h5>Current hours in place: </h5>
                                           </td>
                                           <td style=" vertical-align: top;">
-                                             <textarea class="form-control" name="place" rows="5"></textarea>
+                                             <textarea class="form-control" name="place" rows="5">{{ $InspectionDetails->place }}</textarea>
                                           </td>
                                        </tr>
                                        <tr>
@@ -166,10 +167,10 @@
                                           <td>
                                              <h5>Consumables: </h5>
                                           </td>
-                                          <td><textarea class="form-control" rows="4" name="consumablese"></textarea> </td>
+                                          <td><textarea class="form-control" rows="4" name="consumablese">{{ $InspectionDetails->consumablese }}</textarea> </td>
                                        </tr>
                                        <tr>
-                                          <td >
+                                          <td>
                                              <span class="text-danger">@error('consumablese'){{ $message }} @enderror</span>
                                           </td>
                                        </tr>
@@ -179,11 +180,11 @@
                                              <h5>Why are you looking to change contractors: </h5>
                                           </td>
                                           <td style=" vertical-align: top;">
-                                             <textarea class="form-control" name="contractors" rows="5"></textarea>
+                                             <textarea class="form-control" name="contractors" rows="5">{{ $InspectionDetails->contractors }}</textarea>
                                           </td>
                                        </tr>
                                        <tr>
-                                          <td >
+                                          <td>
                                              <span class="text-danger">@error('contractors'){{ $message }} @enderror</span>
                                           </td>
                                        </tr>
@@ -193,11 +194,11 @@
                                              <h5>Do you have price/Budget:</h5>
                                           </td>
                                           <td style=" vertical-align: top;">
-                                             <textarea class="form-control" name="price" rows="5"></textarea>
+                                             <textarea class="form-control" name="price" rows="5">{{ $InspectionDetails->price }}</textarea>
                                           </td>
                                        </tr>
                                        <tr>
-                                          <td >
+                                          <td>
                                              <span class="text-danger">@error('price'){{ $message }} @enderror</span>
                                           </td>
                                        </tr>
@@ -207,11 +208,11 @@
                                              <h5>Inspector Name: </h5>
                                           </td>
                                           <td style=" vertical-align: top;">
-                                             <textarea class="form-control" name="inspector" rows="5"></textarea>
+                                             <textarea class="form-control" name="inspector" rows="5">{{ $InspectionDetails->inspector }}</textarea>
                                           </td>
                                        </tr>
                                        <tr>
-                                          <td >
+                                          <td>
                                              <span class="text-danger">@error('inspector'){{ $message }} @enderror</span>
                                           </td>
                                        </tr>
@@ -224,7 +225,7 @@
                               <br>
                               <div class="form-row"><br>
                                  <div class="col">
-                                    <button type="submit" id='submit' name="submit" class="btn " value="Save">Save</button>
+                                    <button type="submit" id='submit' name="submit" class="btn " value="Update">Update</button>
                                     <button type="button" class="btn btn-secondary" onclick="reloadPage()">Reset</button>
 
                                  </div>
@@ -241,10 +242,11 @@
       </section>
    </div>
    <script>
-            function reloadPage() {
-                window.location.reload();
-            }
-        </script>
+      function reloadPage() {
+         window.location.reload();
+      }
+   </script>
+
 </body>
 
 </html>

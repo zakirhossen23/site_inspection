@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -84,7 +85,56 @@ class MainController extends Controller
             return back()->with('fail', 'Something went wrong, try again later');
         }
     }
+    function InspectionUpdate(Request $request)
+    {
 
+        //Validate requests
+        $request->validate([
+            'client_name' => 'required',
+            'site_address' => 'required',
+            'place' => 'required',
+            'price' => 'required',
+            'inspector' => 'required'
+        ]);
+
+
+        $inspection =  inspections::findOrFail($request->id);
+        $inspection->date = $request->date;
+        $inspection->client_name = $request->client_name;
+        $inspection->client_representative = $request->client_representative;
+        $inspection->site_address = $request->site_address;
+        $inspection->equipment = $request->equipment;
+        $inspection->consumablese = $request->consumablese;
+        $inspection->qoute = $request->qoute;
+        $inspection->place = $request->place;
+        $inspection->expire = $request->expire;
+        $inspection->contractors = $request->contractors;
+        $inspection->price = $request->price;
+        $inspection->inspector = $request->inspector;
+        $save = $inspection->save();
+
+        if ($save) {
+            return back()->with('success', 'Updated Inspection');
+        } else {
+            return back()->with('fail', 'Something went wrong, try again later');
+        }
+    }
+    function InspectionEdit(Request $request)
+    {
+        $data = ['InspectionDetails' => inspections::where('id', '=', $request->edit_id)->first()];
+        return view('inspector.editform', $data);
+    }    
+    function InspectionDelete(Request $request)
+    {
+        $inspection =  inspections::findOrFail($request->id);
+        $save = $inspection->delete();
+
+        if ($save) {
+            return back()->with('success', 'Deleted Inspection');
+        } else {
+            return back()->with('fail', 'Something went wrong, try again later');
+        }
+    }
     function check(Request $request)
     {
         //Validate requestss
@@ -143,7 +193,7 @@ class MainController extends Controller
         $data = ['AllInspections' => inspections::get()];
         if (session('LoggedRole') === "manager") {
             return view('manager.inspections', $data);
-        }else{
+        } else {
             return view('inspector.inspections', $data);
         }
     }

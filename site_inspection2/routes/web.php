@@ -25,6 +25,10 @@ Route::get('/auth/logout',[MainController::class, 'logout'])->name('auth.logout'
 
 //Inspection
 Route::post('/inspection/save',[MainController::class, 'InspectionSave'])->name('inspection.save');
+Route::get('/inspection/edit',[MainController::class, 'InspectionEdit'])->name('inspection.edit');
+Route::post('/inspection/update',[MainController::class, 'InspectionUpdate'])->name('inspection.update');
+Route::get('/inspection/delete',[MainController::class, 'InspectionDelete'])->name('inspection.delete');
+
 
 
 
