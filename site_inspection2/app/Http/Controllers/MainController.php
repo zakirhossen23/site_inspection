@@ -72,7 +72,6 @@ class MainController extends Controller
         $inspection->consumablese = $request->consumablese;
         $inspection->qoute = $request->qoute;
         $inspection->place = $request->place;
-        $inspection->Contact = $request->Contact;
         $inspection->expire = $request->expire;
         $inspection->contractors = $request->contractors;
         $inspection->price = $request->price;
