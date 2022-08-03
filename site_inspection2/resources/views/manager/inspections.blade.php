@@ -24,7 +24,7 @@
          </div>
          <section class="inspector">
             <div class="inspector-list">
-   
+
                <table class="table">
                   <thead>
                      <tr>
@@ -43,7 +43,7 @@
                      </tr>
                   </thead>
                   <tbody>
-                  @foreach ($AllInspections as $inspection)
+                     @foreach ($AllInspections as $inspection)
                      <tr>
                         <td>{{ $inspection->id }}</td>
                         <td>{{ $inspection->date }}</td>
