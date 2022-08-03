@@ -8,7 +8,12 @@
    <title>Login</title>
    <link rel="stylesheet" href="{{ asset('bootstrap-3.1.1/css/bootstrap.min.css') }}">
 </head>
-
+<?php
+   if (session('LoggedUser') !== null){
+      header('Location: /dashboard');
+      exit;
+   }
+?>
 <body style="background-color: #F1F5F8">
    @include('componenet\header')
 

@@ -19371,10 +19371,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
+/***/ "./resources/css/style.css":
+/*!*********************************!*\
+  !*** ./resources/css/style.css ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -19426,14 +19426,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
-  \***********************************************************/
+/*!*************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/css/style.css ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! H:\xampp\htdocs\Site Inspection\Laravel-8-custom-authentication-master\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! H:\xampp\htdocs\Site Inspection\Laravel-8-custom-authentication-master\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! H:\xampp\htdocs\Site Inspection\site_inspection2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! H:\xampp\htdocs\Site Inspection\site_inspection2\resources\css\style.css */"./resources/css/style.css");
 
 
 /***/ })

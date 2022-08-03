@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ asset('bootstrap-3.1.1/css/bootstrap.min.css') }}">
 </head>
 <body>
-    
+@include('componenet\nav\managernav')
+
     <div class="container">
          <div class="row">
             <div class="col-md-6 col-md-offset-3">

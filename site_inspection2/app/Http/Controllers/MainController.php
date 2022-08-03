@@ -61,7 +61,9 @@ class MainController extends Controller
             //check password
             if(Hash::check($request->password, $userInfo->password)){
                 $request->session()->put('LoggedUser', $userInfo->id);
-                return redirect('admin/dashboard');
+                $request->session()->put('LoggedRole', $userInfo->role);
+                
+                return redirect('/dashboard');
 
             }else{
                 return back()->with('fail','Incorrect password');
@@ -78,20 +80,7 @@ class MainController extends Controller
 
     function dashboard(){
         $data = ['LoggedUserInfo'=>User::where('id','=', session('LoggedUser'))->first()];
-        return view('admin.dashboard', $data);
+        return view('inspector.dashboard', $data);
     }
 
-    function settings(){
-        $data = ['LoggedUserInfo'=>User::where('id','=', session('LoggedUser'))->first()];
-        return view('admin.settings', $data);
-    }
-
-    function profile(){
-        $data = ['LoggedUserInfo'=>User::where('id','=', session('LoggedUser'))->first()];
-        return view('admin.profile', $data);
-    }
-    function staff(){
-        $data = ['LoggedUserInfo'=>User::where('id','=', session('LoggedUser'))->first()];
-        return view('admin.staff', $data);
-    }
 }
