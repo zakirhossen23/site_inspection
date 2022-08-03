@@ -11,12 +11,12 @@
 
 <body>
    <div class="container">
-   
-   @include('componenet\nav\inspectornav')
+
+      @include('componenet\nav\inspectornav')
 
 
       <section class="main">
-      <div class="main-top">
+         <div class="main-top">
             <h1>Dashboard</h1>
             <div>
                Inspector
@@ -27,83 +27,46 @@
          <div class="users">
             <div class="card">
                <div style="display: flex;justify-content: center;align-items: center;align-content: center;height: 54px;">
-                  <h1 style="vertical-align: middle;">5</h1>
+                  <h1 style="vertical-align: middle;">{{ $TotalInspection }}</h1>
                </div>
                <p>Total Active Inspections</p>
-               <button>View All</button>
+               <a href="/all-inspection">View All</a>
             </div>
          </div>
 
          <section class="inspector">
             <div class="inspector-list">
-               <h1>Latest Inspections</h1>
+               <h1>Latest 5 Inspections</h1>
                <table class="table">
                   <thead>
                      <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Depart</th>
                         <th>Date</th>
-                        <th>Join Time</th>
-                        <th>Logout Time</th>
-                        <th>Details</th>
+                        <th>Client Name</th>
+                        <th>Site Address</th>
+                        <th>Equipment</th>
+                        <th>Place</th>
+                        <th>Contractors</th>
+                        <th>Price</th>
+                        <th>Inspector</th>
                      </tr>
                   </thead>
                   <tbody>
+                  @foreach ($AllInspections as $inspection)
                      <tr>
-                        <td>01</td>
-                        <td>Sam David</td>
-                        <td>Design</td>
-                        <td>03-24-22</td>
-                        <td>8:00AM</td>
-                        <td>3:00PM</td>
-                        <td><button>View</button></td>
+                        <td>{{ $inspection->id }}</td>
+                        <td>{!! date('d/m/y', strtotime($inspection->date)) !!}</td>
+                        <td>{{ $inspection->client_name }}</td>
+                        <td>{{ $inspection->site_address }}</td>
+                        <td>{{ $inspection->equipment }}</td>
+                        <td>{{ $inspection->place }}</td>
+                        <td>{{ $inspection->contractors }}</td>
+                        <td>{{ $inspection->price }}</td>
+                        <td>{{ $inspection->inspector }}</td>
+                       
                      </tr>
-                     <tr class="active">
-                        <td>02</td>
-                        <td>Balbina Kherr</td>
-                        <td>Coding</td>
-                        <td>03-24-22</td>
-                        <td>9:00AM</td>
-                        <td>4:00PM</td>
-                        <td><button>View</button></td>
-                     </tr>
-                     <tr>
-                        <td>03</td>
-                        <td>Badan John</td>
-                        <td>testing</td>
-                        <td>03-24-22</td>
-                        <td>8:00AM</td>
-                        <td>3:00PM</td>
-                        <td><button>View</button></td>
-                     </tr>
-                     <tr>
-                        <td>04</td>
-                        <td>Sara David</td>
-                        <td>Design</td>
-                        <td>03-24-22</td>
-                        <td>8:00AM</td>
-                        <td>3:00PM</td>
-                        <td><button>View</button></td>
-                     </tr>
-                     <!-- <tr >
-                <td>05</td>
-                <td>Salina</td>
-                <td>Coding</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-                <td>4:00PM</td>
-                <td><button>View</button></td>
-              </tr>
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-                <td>4:00PM</td>
-                <td><button>View</button></td>
-              </tr> -->
+                     @endforeach
+
                   </tbody>
                </table>
             </div>

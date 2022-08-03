@@ -173,10 +173,11 @@ class MainController extends Controller
 
     function dashboard()
     {
-        $data = ['Inspectors' => User::where('role', '=', 'site_inspector')->get()];
         if (session('LoggedRole') === "manager") {
+            $data = ['Inspectors' => User::where('role', '=', 'site_inspector')->get()];
             return view('manager.dashboard', $data);
         } else {
+            $data = ['TotalInspection' => inspections::count(),'AllInspections' => inspections::orderBy('created_at', 'DESC')->take(5)->get()];
             return view('inspector.dashboard', $data);
         }
     }
