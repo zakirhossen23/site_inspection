@@ -11,14 +11,14 @@
 
 <body>
    <div class="container">
-      @include('componenet\nav\managernav')
+      @include('componenet\nav\inspectornav')
 
       <section class="main">
          <div class="main-top">
-            <h1>Site inspections</h1>
+         <h1>All Inspections</h1>
             <div>
-               Manager
-               <i class="fas fa-user-cog"></i>
+               Inspector
+               <i class="fas fa-user"></i>
             </div>
 
          </div>

@@ -49,6 +49,43 @@ class MainController extends Controller
         }
     }
 
+
+    function InspectionSave(Request $request)
+    {
+
+        //Validate requests
+        $request->validate([
+            'client_name' => 'required',
+            'site_address' => 'required',
+            'place' => 'required',
+            'price' => 'required',
+            'inspector' => 'required'
+        ]);
+
+        //Insert data into database
+        $inspection = new inspections;
+        $inspection->date = $request->date;
+        $inspection->client_name = $request->client_name;
+        $inspection->client_representative = $request->client_representative;
+        $inspection->site_address = $request->site_address;
+        $inspection->equipment = $request->equipment;
+        $inspection->consumablese = $request->consumablese;
+        $inspection->qoute = $request->qoute;
+        $inspection->place = $request->place;
+        $inspection->Contact = $request->Contact;
+        $inspection->expire = $request->expire;
+        $inspection->contractors = $request->contractors;
+        $inspection->price = $request->price;
+        $inspection->inspector = $request->inspector;
+        $save = $inspection->save();
+
+        if ($save) {
+            return back()->with('success', 'New Inspection has been successfuly added to database');
+        } else {
+            return back()->with('fail', 'Something went wrong, try again later');
+        }
+    }
+
     function check(Request $request)
     {
         //Validate requestss
@@ -83,11 +120,15 @@ class MainController extends Controller
         }
     }
 
+    //Manager
+
     function dashboard()
     {
         $data = ['Inspectors' => User::where('role', '=', 'site_inspector')->get()];
         if (session('LoggedRole') === "manager") {
             return view('manager.dashboard', $data);
+        } else {
+            return view('inspector.dashboard', $data);
         }
     }
 
@@ -103,6 +144,15 @@ class MainController extends Controller
         $data = ['AllInspections' => inspections::get()];
         if (session('LoggedRole') === "manager") {
             return view('manager.inspections', $data);
+        }else{
+            return view('inspector.inspections', $data);
         }
+    }
+
+
+    //Inspector
+    function FormInspector()
+    {
+        return view('inspector.form');
     }
 }

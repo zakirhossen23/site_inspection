@@ -1,5 +1,4 @@
-/*  import google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap);/*  import google fonts */
 
 * {
   margin: 0;
@@ -16,6 +15,7 @@ body {
 }
 
 nav {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   bottom: 0;
@@ -65,7 +65,9 @@ a {
 nav li .active {
   background-color: #34AF6D;
   color: white;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 nav .fas {
@@ -158,7 +160,9 @@ nav .fas {
 }
 
 .main-top div {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   position: absolute;
   right: 0;
   margin: 10px 30px;
@@ -199,7 +203,7 @@ table thead tr {
 
 .table th,
 .table td {
-  padding: 12px 15px;
+  padding: 8px 10px;
 }
 
 .table tbody tr {
@@ -244,4 +248,18 @@ table thead tr {
   background: #4AD489;
   color: #fff;
   transition: 0.5rem;
+}
+
+table td input {
+  border: 1px solid #e7e7e7;
+  width: 100%;
+  font-size: 14px;
+  height: 100%;
+  padding: 8px 12px;
+}
+table td textarea {
+  border: 1px solid #e7e7e7;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
 }

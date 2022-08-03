@@ -23,8 +23,7 @@ class CreateInspectionsTable extends Migration
             $table->string('equipment'); 
             $table->string('consumablese'); 
             $table->timestamp('qoute')->nullable(); 
-            $table->string('place'); 
-            $table->string('Contact'); 
+            $table->string('place');
             $table->string('expire'); 
             $table->string('contractors'); 
             $table->float('price'); 

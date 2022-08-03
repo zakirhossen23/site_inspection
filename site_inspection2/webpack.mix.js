@@ -14,3 +14,4 @@ const mix = require('laravel-mix');
 mix.js('resources/js//app.js', 'public/js');
 mix.postCss('resources/css/style.css','public/css');
 mix.postCss('resources/css/dashboard.css','public/css');
+mix.postCss('resources/css/inspection_form.css','public/css');
