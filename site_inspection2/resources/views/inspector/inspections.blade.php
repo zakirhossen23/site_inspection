@@ -12,7 +12,7 @@
 <body>
    <div class="container">
       @include('componenet\nav\inspectornav')
-
+   
       <section class="main">
          <div class="main-top">
          <h1>All Inspections</h1>
@@ -34,7 +34,6 @@
                         <th>Site Address</th>
                         <th>Equipment</th>
                         <th>Place</th>
-                        <th>Contact</th>
                         <th>Contractors</th>
                         <th>Price</th>
                         <th>Inspector</th>
@@ -46,12 +45,11 @@
                      @foreach ($AllInspections as $inspection)
                      <tr>
                         <td>{{ $inspection->id }}</td>
-                        <td>{{ $inspection->date }}</td>
+                        <td>{!! date('d/m/y', strtotime($inspection->date)) !!}</td>
                         <td>{{ $inspection->client_name }}</td>
                         <td>{{ $inspection->site_address }}</td>
                         <td>{{ $inspection->equipment }}</td>
                         <td>{{ $inspection->place }}</td>
-                        <td>{{ $inspection->Contact }}</td>
                         <td>{{ $inspection->contractors }}</td>
                         <td>{{ $inspection->price }}</td>
                         <td>{{ $inspection->inspector }}</td>

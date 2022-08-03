@@ -12,7 +12,7 @@
 <body>
    <div class="container">
       @include('componenet\nav\managernav')
-
+      @use Carbon\Carbon;
       <section class="main">
          <div class="main-top">
             <h1>Site inspections</h1>
@@ -34,7 +34,6 @@
                         <th>Site Address</th>
                         <th>Equipment</th>
                         <th>Place</th>
-                        <th>Contact</th>
                         <th>Contractors</th>
                         <th>Price</th>
                         <th>Inspector</th>
@@ -51,7 +50,6 @@
                         <td>{{ $inspection->site_address }}</td>
                         <td>{{ $inspection->equipment }}</td>
                         <td>{{ $inspection->place }}</td>
-                        <td>{{ $inspection->Contact }}</td>
                         <td>{{ $inspection->contractors }}</td>
                         <td>{{ $inspection->price }}</td>
                         <td>{{ $inspection->inspector }}</td>
