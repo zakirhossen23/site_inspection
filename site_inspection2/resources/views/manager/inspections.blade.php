@@ -12,7 +12,6 @@
 <body>
    <div class="container">
       @include('componenet\nav\managernav')
-      @use Carbon\Carbon;
       <section class="main">
          <div class="main-top">
             <h1>Site inspections</h1>
@@ -37,8 +36,6 @@
                         <th>Contractors</th>
                         <th>Price</th>
                         <th>Inspector</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -53,8 +50,6 @@
                         <td>{{ $inspection->contractors }}</td>
                         <td>{{ $inspection->price }}</td>
                         <td>{{ $inspection->inspector }}</td>
-                        <td><button>Edit</button></td>
-                        <td><button>Delete</button></td>
                      </tr>
                      @endforeach
 
