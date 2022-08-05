@@ -51,13 +51,12 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Client Name</th>
                             <th>Date</th>
-                            <th>Title</th>
-                            <th>Inspector Name</th>
-                            <th>Type</th>
-                            <th>Severity</th>
                             <th>Site Name</th>
-                            <th>Whom To Contact</th>
+                            <th>Contract Expires</th>
+                            <th>Total Budget</th>
+                            <th>Inspector Name</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -69,13 +68,12 @@
                         ?>
                                 <tr>
                                     <td><?php echo $row['ID']; ?></td>
+                                    <td><?php echo $row['client_name']; ?></td>
                                     <td><?php echo $row['date']; ?></td>
-                                    <td><?php echo $row['title']; ?></td>
-                                    <td><?php echo $row['inspector_name']; ?></td>
-                                    <td><?php echo $row['inspection_type']; ?></td>
-                                    <td><?php echo $row['severity']; ?></td>
                                     <td><?php echo $row['site_name']; ?></td>
-                                    <td><?php echo $row['Contact']; ?></td>
+                                    <td><?php echo $row['expire']; ?></td>
+                                    <td><?php echo $row['total_budget']; ?></td>
+                                    <td><?php echo $row['inspectior_name']; ?></td>
                                     <td>
                                         <form action="site_inspection_edit.php" method="post">
                                             <input type="hidden" name="edit_id" value="<?php echo $row['ID']; ?>">

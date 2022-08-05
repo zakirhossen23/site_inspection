@@ -26,19 +26,20 @@
     $output = "";
 
     if (isset($_POST['submit'])) {
-        $date = str_replace("'", "\'", $_POST["date"]);
+
         $client_name = str_replace("'", "\'", $_POST["client_name"]);
-        $client_representative = str_replace("'", "\'", $_POST["client_representative"]);
-        $site_address = str_replace("'", "\'", $_POST["site_address"]);
+        $date = str_replace("'", "\'", $_POST["date"]);
+        $site_name = str_replace("'", "\'", $_POST["site_name"]);
+        $address1 = str_replace("'", "\'", $_POST["address1"]);
+        $address2 = str_replace("'", "\'", $_POST["address2"]);
+        $post_code = str_replace("'", "\'", $_POST["post_code"]);
+        $site_description = str_replace("'", "\'", $_POST["site_description"]);
         $equipment = str_replace("'", "\'", $_POST["equipment"]);
-        $consumablese = str_replace("'", "\'", $_POST["consumablese"]);
-        $qoute = str_replace("'", "\'", $_POST["qoute"]);
-        $place = str_replace("'", "\'", $_POST["place"]);
-        $Contact = str_replace("'", "\'", $_POST["Contact"]);
+        $hour = str_replace("'", "\'", $_POST["hour"]);
         $expire = str_replace("'", "\'", $_POST["expire"]);
-        $contractors = str_replace("'", "\'", $_POST["contractors"]);
-        $price = str_replace("'", "\'", $_POST["price"]);
-        $inspector = str_replace("'", "\'", $_POST["inspector"]);
+        $total_budget = str_replace("'", "\'", $_POST["total_budget"]);
+        $inspectior_name = str_replace("'", "\'", $_POST["inspectior_name"]);
+        $qoute = str_replace("'", "\'", $_POST["qoute"]);
 
         $error = array();
 
@@ -46,8 +47,8 @@
             $error['error'] = "Date is Empty";
         } else if (empty($site_name)) {
             $error['error'] = "Site Name is empty";
-        } else if (empty($inspection_type)) {
-            $error['error'] = "Inspection Type is empty";
+        } else if (empty($client_name)) {
+            $error['error'] = "Client Name is empty";
         }
 
         if (isset($error['error'])) {
@@ -59,7 +60,7 @@
 
         if (count($error) < 1) {
 
-            $query = "INSERT INTO `inspections`( `date`, `client_name`, `client_representative`, `site_address`, `equipment`, `consumablese`, `qoute`, `place`, `Contact`, `expire`, `contractors`, `price`, `inspector`) VALUES ('$date','$client_name','$client_representative','$site_address','$equipment','$consumablese','$qoute','$place','$Contact','$contractors','$price','$inspector')";
+            $query = "INSERT INTO `inspections`( `client_name`, `date`, `site_name`, `address1`, `address2`, `title`, `post_code`, `site_description`, `equipment`, `hour`, `expire`, `total_budget`, `inspectior_name`, `qoute`) VALUES ('$client_name','$date','$site_name','$address1','$address2','$title','$post_code','$site_description','$equipment','$hour','$expire','$total_budget','$inspectior_name','$qoute')";
 
             $res = mysqli_query($connect, $query);
 
@@ -92,16 +93,9 @@
                     <div>
                         <div class="text-center"><?php echo $output; ?></div>
                         <form action="" method="post" enctype="">
-                            <div style="display: flex;">
+                            <div style="display: flex; gap:20px">
                                 <table style="width: 550px; column-gap:14px">
                                     <tbody>
-                                        <tr>
-                                            <td style="width: 21%;">
-                                                <h5>Date: </h5>
-                                            </td>
-                                            <td style="width: 26%;"><input type="date" class="form-control" name="date" /></td>
-                                        </tr>
-
                                         <tr>
                                             <td>
                                                 <h5>Client Name:</h5>
@@ -109,81 +103,91 @@
                                             <td> <input type="text" class="form-control" name="client_name"></td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <h5>Client Representative:</h5>
+                                            <td style="width: 21%;">
+                                                <h5>Date: </h5>
                                             </td>
-                                            <td> <input type="text" class="form-control" name="client_representative"></td>
-
+                                            <td style="width: 26%;"><input type="date" class="form-control" name="date" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Site Name:</h5>
+                                            </td>
+                                            <td> <input type="text" class="form-control" name="site_name"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Address line 1: </h5>
+                                            </td>
+                                            <td> <input type="text" class="form-control" name="address1"></td>
                                         </tr>
 
                                         <tr>
                                             <td>
-                                                <h5>Site Address: </h5>
+                                                <h5>Address line 2: </h5>
                                             </td>
-                                            <td> <input type="text" class="form-control" name="site_address"></td>
+                                            <td> <input type="text" class="form-control" name="address2"></td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <h5>Equipment: </h5>
+                                                <h5>Post code: </h5>
                                             </td>
-                                            <td><textarea class="form-control" name="equipment"></textarea> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5>Consumables: </h5>
-                                            </td>
-                                            <td><textarea class="form-control" name="consumablese"></textarea> </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: top;">
-                                                <h5>Qoute needed by: </h5>
-                                            </td>
-                                            <td>
-                                                <input type="date" class="form-control" name="qoute" />
-                                            </td>
+                                            <td> <input type="text" class="form-control" name="post_code"></td>
                                         </tr>
                                         <tr>
                                             <td style=" vertical-align: top;">
-                                                <h5>Current hours in place: </h5>
+                                                <h5>Site Description: </h5>
                                             </td>
                                             <td style=" vertical-align: top;">
-                                                <textarea class="form-control" name="place" rows="5"></textarea>
+                                                <textarea class="form-control" name="site_description" rows="5"></textarea>
                                             </td>
                                         </tr>
+
                                     </tbody>
                                 </table>
-                                <table style="width: 450px; column-gap:14px">
+                                <table style="width: 500px; column-gap:14px">
                                     <tbody>
                                         <tr>
-                                            <td style="width: 45%;">
-                                                <h5>Current Contract Expires: </h5>
+                                            <td style=" vertical-align: top;">
+                                                <h5>Equipment: </h5>
                                             </td>
-                                            <td>
+                                            <td style=" vertical-align: top;"><textarea class="form-control" name="equipment"  rows="5"></textarea> </td>
+                                        </tr>
+                                        <tr>
+                                            <td style=" vertical-align: top;">
+                                                <h5>Current hour: </h5>
+                                            </td>
+                                            <td style=" vertical-align: top;">
+                                                <input type="time" class="form-control" name="hour">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style=" vertical-align: top;">
+                                                <h5>Contract Expires: </h5>
+                                            </td>
+                                            <td style=" vertical-align: top;">
                                                 <input type="date" class="form-control" name="expire" />
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style=" vertical-align: top;">
-                                                <h5>Why are you looking to change contractors: </h5>
+                                                <h5>Total Budget: </h5>
                                             </td>
-                                            <td style=" vertical-align: top;">
-                                                <textarea class="form-control" name="contractors" rows="5"></textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style=" vertical-align: top;">
-                                                <h5>Do you have price/Budget:</h5>
-                                            </td>
-                                            <td style=" vertical-align: top;">
-                                                <textarea class="form-control" name="price" rows="5"></textarea>
-                                            </td>
+                                            <td style=" vertical-align: top;"> <input type="text" class="form-control" name="total_budget"></td>
                                         </tr>
                                         <tr>
                                             <td style=" vertical-align: top;">
                                                 <h5>Inspector Name: </h5>
                                             </td>
                                             <td style=" vertical-align: top;">
-                                                <textarea class="form-control" name="inspector" rows="5"></textarea>
+                                                <input type="text" class="form-control" name="inspectior_name">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: top;">
+                                                <h5>Qoute needed by: </h5>
+                                            </td>
+                                            <td style=" vertical-align: top;">
+                                                <input type="date" class="form-control" name="qoute" />
                                             </td>
                                         </tr>
                                     </tbody>

@@ -82,7 +82,7 @@ $user = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM users WHERE id 
                Inspector
 
                 </span>
-                      <img class="img-profile rounded-circle" src='UploadedImages/<?php echo $user["image"] ?>'>
+                      <img class="img-profile rounded-circle" src='UploadedImages/no-image.png'>
                    </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
