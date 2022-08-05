@@ -60,7 +60,7 @@
 
         if (count($error) < 1) {
 
-            $query = "INSERT INTO `inspections`( `client_name`, `date`, `site_name`, `address1`, `address2`, `title`, `post_code`, `site_description`, `equipment`, `hour`, `expire`, `total_budget`, `inspectior_name`, `qoute`) VALUES ('$client_name','$date','$site_name','$address1','$address2','$title','$post_code','$site_description','$equipment','$hour','$expire','$total_budget','$inspectior_name','$qoute')";
+            $query = "INSERT INTO `inspections`( `client_name`, `date`, `site_name`, `address1`, `address2`,  `post_code`, `site_description`, `equipment`, `hour`, `expire`, `total_budget`, `inspectior_name`, `qoute`) VALUES ('$client_name','$date','$site_name','$address1','$address2','$post_code','$site_description','$equipment','$hour','$expire','$total_budget','$inspectior_name','$qoute')";
 
             $res = mysqli_query($connect, $query);
 

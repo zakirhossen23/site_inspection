@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
 
             $output .= "you have logged-In";
         } else {
-            $output .= "Incorrect Username or Password";
+            $output .= "Invalid login credentials";
         }
     }
     if (isset($error['error'])) {

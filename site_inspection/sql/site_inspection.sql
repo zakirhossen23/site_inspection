@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2022 at 01:59 PM
+-- Generation Time: Aug 05, 2022 at 05:33 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -29,23 +29,28 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `inspections` (
   `ID` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `inspector_name` varchar(200) NOT NULL,
+  `client_name` varchar(255) NOT NULL,
+  `date` date DEFAULT NULL,
   `site_name` varchar(200) NOT NULL,
-  `inspection_type` varchar(200) NOT NULL,
+  `address1` varchar(200) NOT NULL,
+  `address2` varchar(200) NOT NULL,
   `title` varchar(200) NOT NULL,
-  `description` varchar(200) NOT NULL,
-  `severity` varchar(200) NOT NULL,
-  `measure` varchar(200) NOT NULL,
-  `Contact` varchar(200) NOT NULL
+  `post_code` varchar(200) NOT NULL,
+  `site_description` varchar(200) NOT NULL,
+  `equipment` varchar(200) NOT NULL,
+  `hour` varchar(200) NOT NULL,
+  `expire` date DEFAULT NULL,
+  `total_budget` varchar(255) NOT NULL,
+  `inspectior_name` varchar(255) NOT NULL,
+  `qoute` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `inspections`
 --
 
-INSERT INTO `inspections` (`ID`, `date`, `inspector_name`, `site_name`, `inspection_type`, `title`, `description`, `severity`, `measure`, `Contact`) VALUES
-(1, '2022-07-21', 'testing', 'test site', 'werwe', 'Testing inspection', 'Goes Description', 'High', 'ewr werwefd gdf', 'MD Rahim');
+INSERT INTO `inspections` (`ID`, `client_name`, `date`, `site_name`, `address1`, `address2`, `title`, `post_code`, `site_description`, `equipment`, `hour`, `expire`, `total_budget`, `inspectior_name`, `qoute`) VALUES
+(1, 'test', '2022-07-21', 'testing', 'test site', 'werwe', '', 'Goes Description', 'High', 'ewr werwefd gdf', '11:53', '2022-09-06', '34', 'wer', '2022-08-24');
 
 -- --------------------------------------------------------
 
